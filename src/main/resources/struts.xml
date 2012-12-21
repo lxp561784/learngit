@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="exam" 
+ 			extends="json-default">
+		<action name="login" class="action.LoginAction">
+			<result type="redirect">
+				/list2.jsp
+			</result>
+			<result name="false">
+				/login.jsp
+			</result>
+		</action>
+		
+		<action name="add" class="action.AddAction">
+			<result type="redirect">
+				list
+			</result>
+		</action>
+		<action name="list" class="action.ListAction">
+			<result type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<action name="delete" class="action.DeleteAction">
+			<result type="redirect">
+				list
+			</result>
+		</action>
+		<action name="modify" class="action.ModifyAction">
+			<result type="redirect">
+				list
+			</result>
+		</action>
+ 		<action name="find" class="action.FindAction">
+ 			<result >
+ 				/modify.jsp
+ 			</result>
+ 		</action>
+ 		<action name="look" class="action.FindAction">
+			<result>
+				/article.jsp
+			</result>
+ 		</action>
+ 		<action name="lookarticle" class="action.LookUserarticleAction">
+ 			<result>
+ 				/receivearticle.jsp
+ 			</result>
+ 		</action>
+ 		<action name="get" class="action.GetAction">
+ 			<result type="redirect">
+ 				list
+ 			</result>
+ 		</action>
+ 		
+ 	</package>
+ </struts>
